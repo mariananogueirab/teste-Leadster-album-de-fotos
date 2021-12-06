@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/album.css';
 
 function Footer() {
   return (

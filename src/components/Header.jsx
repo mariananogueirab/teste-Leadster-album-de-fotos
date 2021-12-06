@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/album.css';
 import Logo from '../images/logo-leadster.png';
 
 const Header = function HeaderFunc() {
