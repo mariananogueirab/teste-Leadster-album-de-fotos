@@ -3,7 +3,7 @@ import axios from 'axios';
 import AlbumContext from './AlbumContext';
 
 function AlbumProvider({ children }) {
-  const API_PHOTOS = 'https://api.pexels.com/v1/curated?per_page=20';
+  const API_PHOTOS = 'https://api.pexels.com/v1/curated?per_page=10';
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
   const API_KEY = '563492ad6f9170000100000154ad4ac4ee4346c385b7fff974a8a2b6';

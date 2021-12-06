@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../images/logo-leadster.png';
+import '../styles/album.css';
 
 const Header = function HeaderFunc() {
   return (
