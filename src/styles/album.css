@@ -5,12 +5,13 @@
   font-size: 1vw;
 }
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 768px) {
   .album {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    height: fit-content;
   }
   
   header {
@@ -59,66 +60,80 @@
     color: #998CEB;
   }
 
+  .photo {
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 1px 4px 4px 1px;
+  }
+
   .photos-album {
-    height:"400px";
-    width:"400px";
+    border-radius: 6px;
   }
 }
 
-/* @media screen and (min-width: 412px ) {
-
-.album {
-  display: flex;
-  justify-content: center;
-}
-
-header {
-  height: 15vh;
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.title-header {
+@media screen and (min-width: 769px ) {
+  .album {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+  
+  header {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+  }
+  
+  .title-header {
+    color: white;
+    font-size: 5vw;
+  }
+  
+  .logo-leadster, .logo-pexels {
+    width: 10vw;
+  }
+  
+  footer {
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    bottom: 0px;
+  }
+  
+  .author {
   color: white;
-  font-size: 20px;
+    font-size: 3vw;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .links {
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+  }
+  
+  .links:hover {
+    color: #998CEB;
+  }
+
+  .photo {
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 1px 4px 4px 1px;
+  }
+
+  .photos-album {
+    border-radius: 6px;
+  }
+
 }
-
-.logo-leadster, .logo-pexels {
-  width: 100px;
-}
-
-footer {
-  height: 10vh;
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.author {
-color: white;
-  font-size: 20px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-around;
-}
-
-.links {
-  color: white;
-  text-decoration: none;
-}
-
-.links:hover {
-  color: #998CEB;
-}
-
-.carrousel-images {
-
-  height: 75vh;
-}
-
-} */
