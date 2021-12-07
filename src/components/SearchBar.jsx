@@ -4,6 +4,7 @@ import AlbumContext from '../context/AlbumContext';
 
 function SearchBar() {
   const { width, getSearchText } = useContext(AlbumContext);
+
   return (
     <div className="search-bar">
       <input
@@ -13,7 +14,7 @@ function SearchBar() {
         onChange={ ({ target: { value } }) => getSearchText(value) }
         className="input-search"
       />
-      <BsSearch size={width >= 320 ? "40px" : "20px"}/>
+      <BsSearch size={width >= 320 ? "40px" : "20px"} />
     </div>
   )
 }
