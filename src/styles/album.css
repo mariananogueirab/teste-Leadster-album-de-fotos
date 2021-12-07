@@ -37,12 +37,12 @@
     justify-content: space-around;
     align-items: center;
     background-color: black;
-    bottom: 0px;
+    padding: 5px;
   }
   
   .author {
   color: white;
-    font-size: 4vw;
+    font-size: 3vw;
   }
   
   .nav {
@@ -53,11 +53,6 @@
   .links {
     color: white;
     text-decoration: none;
-    font-size: 3vw;
-  }
-  
-  .links:hover {
-    color: #998CEB;
   }
 
   .photo {
@@ -73,7 +68,22 @@
   .search-bar {
     height: 10vh;
     width: 100vw;
-    background-color: gray;
+    background-color: #D3E4CD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-search {
+    height: 7vh;
+    width: 40vw;
+    border-radius: 6px;
+    margin: 10px;
+  }
+
+  ::placeholder {
+    text-align: center;
+    font-size: 3vh;
   }
 }
 
@@ -109,7 +119,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: black;
-    bottom: 0px;
+    bottom: 0;
   }
   
   .author {
@@ -125,11 +135,7 @@
   .links {
     color: white;
     text-decoration: none;
-    font-size: 2vw;
-  }
-  
-  .links:hover {
-    color: #998CEB;
+
   }
 
   .photo {
@@ -145,7 +151,26 @@
   .search-bar {
     height: 10vh;
     width: 100vw;
-    background-color: gray;
+    background-color: #D3E4CD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-search {
+    height: 7vh;
+    width: 40vw;
+    border-radius: 6px;
+    margin: 10px;
+  }
+
+  ::placeholder {
+    text-align: center;
+    font-size: 3vh;
+  }
+
+  .not-found {
+    height: 10vh;
   }
 
 }
