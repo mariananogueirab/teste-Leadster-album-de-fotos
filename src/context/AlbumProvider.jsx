@@ -8,7 +8,7 @@ function AlbumProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [width, setWidth] = useState(0)
   const [searchText, getSearchText] = useState('nature')
-  const API_PHOTOS = `https://api.pexels.com/v1/search?query=${searchText}&per_page=10`;
+  const API_PHOTOS = `https://api.pexels.com/v1/search?query=${searchText === '' ? 'nature' : searchText}&per_page=10`;
   const API_KEY = '563492ad6f9170000100000154ad4ac4ee4346c385b7fff974a8a2b6';
 
   useEffect(() => {
@@ -32,7 +32,8 @@ function AlbumProvider({ children }) {
     photos,
     loading,
     width,
-    getSearchText
+    getSearchText,
+    searchText
   };
 
   return (
