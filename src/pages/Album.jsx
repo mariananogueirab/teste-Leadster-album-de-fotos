@@ -4,14 +4,15 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import '../../node_modules/react-lazy-load-image-component/src/effects/blur.css';
 import '../styles/album.css';
 import Spinning from '../components/Spinning';
+import CollectionNotFound from '../components/CollectionNotFound';
 
 
 function Album() {
-  const { photos, loading, width } = useContext(AlbumContext);
-  console.log(width)
+  const { photos, loading, width, searchText } = useContext(AlbumContext);
 
   return (
     <div className="album">
+      {searchText.lengt > 0 && photos.length === 0 && <CollectionNotFound/>}
       {loading ? <Spinning/> : photos.map((photo, { scrollPosition }) => (
         <div className="photo">
           <LazyLoadImage
