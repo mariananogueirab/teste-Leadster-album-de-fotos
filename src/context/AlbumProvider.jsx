@@ -6,9 +6,10 @@ import PropTypes from 'prop-types';
 function AlbumProvider({ children }) {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [width, setWidth] = useState(0)
-  const [searchText, getSearchText] = useState('nature')
-  const API_PHOTOS = `https://api.pexels.com/v1/search?query=${searchText === '' ? 'nature' : searchText}&per_page=10`;
+  const [width, setWidth] = useState(0);
+  const [searchText, setSearchText] = useState('nature');
+  const [currentPage, setCurrentPage] = useState(1);
+  const API_PHOTOS = `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=20&query=${searchText === '' ? 'nature' : searchText}`;
   const API_KEY = '563492ad6f9170000100000154ad4ac4ee4346c385b7fff974a8a2b6';
 
   useEffect(() => {
@@ -32,8 +33,10 @@ function AlbumProvider({ children }) {
     photos,
     loading,
     width,
-    getSearchText,
-    searchText
+    setSearchText,
+    searchText,
+    setCurrentPage,
+    currentPage
   };
 
   return (
