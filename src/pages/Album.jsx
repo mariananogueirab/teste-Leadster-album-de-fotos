@@ -16,13 +16,14 @@ function Album() {
       {searchText.length > 0 && photos.length === 0 && <CollectionNotFound/>}
       <section className="album">
         {loading ? <Spinning/> : photos.map((photo, { scrollPosition }) => (
+          // se ainda estiver carregando aparece a bolinha girando de carregando, se não, mostra as imagens.
           <div className="photo">
             <LazyLoadImage
               effect="blur"
               src={photo.src.medium}
               alt={photo.photographer}
               key={photo.id}
-              height={width >= 320 ? "400px" : "300px"} // teve que ser tamanho físico por conta do lazyLoadImage
+              height={width >= 320 ? "400px" : "300px"} // teve que ser tamanho fixo por conta do lazyLoadImage
               width={width >= 320 ? "300px" : "150px"}
               scrollPosition={scrollPosition}
               className="photos-album"

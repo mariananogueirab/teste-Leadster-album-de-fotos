@@ -7,27 +7,27 @@ function PaginationComponent(){
   const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const { setCurrentPage, currentPage } = useContext(AlbumContext);
 
-  const firstPage = () => {
+  const firstPage = () => { // volta pra primeira página
     setCurrentPage(1);
     window.scrollTo(0, 0);
   }
 
-  const prevPage = () => {
+  const prevPage = () => { // volta uma página
     currentPage !== 1 && setCurrentPage(currentPage - 1);
     window.scrollTo(0, 0);
   }
 
-  const nextPage = () => {
+  const nextPage = () => { // avança uma página
     currentPage !== 1 && setCurrentPage(currentPage + 1);
     window.scrollTo(0, 0);
   }
 
-  const lastPage = () => {
+  const lastPage = () => { // vai para a última página
     setCurrentPage(pages.length);
     window.scrollTo(0, 0);
   }
 
-  const currPage = (page) => {
+  const currPage = (page) => { // página atual
     setCurrentPage(page);
     window.scrollTo(0, 0);
   }
@@ -37,7 +37,7 @@ function PaginationComponent(){
       <Pagination  size="lg">
         <Pagination.First onClick={firstPage} />
         <Pagination.Prev onClick={prevPage} />
-        {pages.map((page, index) => (
+          {pages.map((page, index) => (
         <Pagination.Item key={page} active={page === currentPage} index={index} onClick={() => currPage(page)}>
          {page}
         </Pagination.Item>

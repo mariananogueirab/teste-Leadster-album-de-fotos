@@ -21,5 +21,6 @@ function Footer() {
     </footer>
   )
 }
+// coloquei a logo da pexels porquê eles pedem na documentação.
 
 export default Footer;

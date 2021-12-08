@@ -4,6 +4,7 @@ import AlbumContext from '../context/AlbumContext';
 import '../styles/album.css';
 
 function CollectionNotFound() {
+  // para quando o texto digitado na search bar não encontrar uma combinação
   const { width } = useContext(AlbumContext);
 
   return (
