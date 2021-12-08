@@ -53,17 +53,17 @@ function PaginationComponent(){
   return (
     <div className="pagination">
       <Pagination  size="lg" pageNeighbours={1}>
-        <Pagination.First onClick={firstPage} />
-        <Pagination.Prev onClick={prevPage} />
-        <Pagination.Ellipsis />
+        <Pagination.First onClick={firstPage} disabled={currentPage === 1}/>
+        <Pagination.Prev onClick={prevPage} disabled={currentPage === 1}/>
+        {currentPage !==1 && <Pagination.Ellipsis />}
           {pagesForShow.map((page, index) => (
             <Pagination.Item key={page} active={page === currentPage} index={index} onClick={() => currPage(page)}>
          {page}
         </Pagination.Item>
       ))}
-        <Pagination.Ellipsis />
-        <Pagination.Next onClick={nextPage}/>
-        <Pagination.Last onClick={lastPage}/>
+        {currentPage !==totalPages && <Pagination.Ellipsis />}
+        <Pagination.Next onClick={nextPage} disabled={currentPage === totalPages}/>
+        <Pagination.Last onClick={lastPage} disabled={currentPage === totalPages}/>
       </Pagination>
     </div>
   )
