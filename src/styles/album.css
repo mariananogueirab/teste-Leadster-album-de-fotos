@@ -68,7 +68,7 @@
   .search-bar {
     height: 10vh;
     width: 100vw;
-    background-color: #D3E4CD;
+    background-color: #B8E4F0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,14 +76,26 @@
 
   .input-search {
     height: 7vh;
-    width: 40vw;
+    width: 60vw;
     border-radius: 6px;
     margin: 10px;
+    font-size: 3vh;
   }
 
   ::placeholder {
     text-align: center;
     font-size: 3vh;
+  }
+
+  .not-found {
+    height: 50vh;
+    font-size: 5vh;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
   }
 }
 
@@ -151,7 +163,7 @@
   .search-bar {
     height: 10vh;
     width: 100vw;
-    background-color: #D3E4CD;
+    background-color: #B8E4F0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,6 +174,7 @@
     width: 40vw;
     border-radius: 6px;
     margin: 10px;
+    font-size: 3vh;
   }
 
   ::placeholder {
@@ -170,7 +183,13 @@
   }
 
   .not-found {
-    height: 10vh;
+    height: 50vh;
+    font-size: 5vh;
   }
 
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
 }
