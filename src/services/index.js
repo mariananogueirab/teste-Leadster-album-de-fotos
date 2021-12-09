@@ -1,5 +1,5 @@
-import axios from "axios";
-import { API_BASE_URL, API_KEY, PER_PAGE_DEFAULT } from "../config";
+import axios from 'axios';
+import { API_BASE_URL, API_KEY, PER_PAGE_DEFAULT } from '../config';
 
 export async function fetchPhotosAlbum(params = {}) {
   // o parâmetro recebe como default um objeto vazio
