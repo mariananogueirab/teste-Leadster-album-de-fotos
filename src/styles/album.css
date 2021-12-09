@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+
+@media screen and (max-width: 768px) {
+  .album {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+
+  header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+  }
+
+  .title-header {
+    color: white;
+    font-size: 5vw;
+  }
+
+  .logo-leadster,
+  .logo-pexels {
+    width: 12vw;
+  }
+
+  footer {
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding: 5px;
+  }
+
+  .author {
+    color: white;
+    font-size: 3vw;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .links {
+    color: white;
+    text-decoration: none;
+  }
+
+  .photo {
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 1px 4px 4px 1px;
+  }
+
+  .photos-album {
+    border-radius: 6px;
+  }
+
+  .search-bar {
+    height: 10vh;
+    width: 100vw;
+    background-color: #b8e4f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-search {
+    height: 7vh;
+    width: 60vw;
+    border-radius: 6px;
+    margin: 10px;
+    font-size: 3vh;
+  }
+
+  ::placeholder {
+    text-align: center;
+    font-size: 3vh;
+  }
+
+  .not-found {
+    height: 50vh;
+    font-size: 5vh;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .album {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+
+  header {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+  }
+
+  .title-header {
+    color: white;
+    font-size: 5vw;
+  }
+
+  .logo-leadster,
+  .logo-pexels {
+    width: 10vw;
+  }
+
+  footer {
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    bottom: 0;
+  }
+
+  .author {
+    color: white;
+    font-size: 3vw;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .links {
+    color: white;
+    text-decoration: none;
+  }
+
+  .photo {
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 1px 4px 4px 1px;
+  }
+
+  .photos-album {
+    border-radius: 6px;
+  }
+
+  .search-bar {
+    height: 10vh;
+    width: 100vw;
+    background-color: #b8e4f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-search {
+    height: 7vh;
+    width: 40vw;
+    border-radius: 6px;
+    margin: 10px;
+    font-size: 3vh;
+  }
+
+  ::placeholder {
+    text-align: center;
+    font-size: 3vh;
+  }
+
+  .not-found {
+    height: 50vh;
+    font-size: 5vh;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+}
