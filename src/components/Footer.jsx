@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import AlbumContext from "../context/AlbumContext";
+import React, { useContext } from 'react';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import AlbumContext from '../context/AlbumContext';
 
-function Footer() {
+const Footer = function FooterFunc() {
   const { width } = useContext(AlbumContext);
 
   return (
@@ -14,10 +14,10 @@ function Footer() {
             href="https://www.linkedin.com/in/mariananogueirabrum/"
             className="links"
           >
-            <BsLinkedin size={width >= 320 ? "30px" : "10px"} />
+            <BsLinkedin size={width >= 320 ? '30px' : '10px'} />
           </a>
           <a href="https://github.com/mariananogueirab" className="links">
-            <BsGithub size={width >= 320 ? "30px" : "10px"} />
+            <BsGithub size={width >= 320 ? '30px' : '10px'} />
           </a>
         </div>
       </div>
@@ -30,7 +30,7 @@ function Footer() {
       </a>
     </footer>
   );
-}
+};
 // coloquei a logo da pexels porquê eles pedem na documentação.
 
 export default Footer;

@@ -1,16 +1,18 @@
-import React, {useState, useEffect, useCallback, useMemo} from 'react';
-import AlbumContext from './AlbumContext';
+import React, {
+  useState, useEffect, useCallback, useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
+import AlbumContext from './AlbumContext';
 import { fetchPhotosAlbum } from '../services';
 
-function AlbumProvider({ children }) {
+const AlbumProvider = function ProviderFunc({ children }) {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [width, setWidth] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
 
-  const fetchAlbum = useCallback( // vai ser chamado toda vez que a página mudar ou quando o searchTextParam mudar, evita renderizações desnecessárias
+  const fetchAlbum = useCallback(
     async (searchTextParam) => {
       const data = await fetchPhotosAlbum({
         page: currentPage,
@@ -19,8 +21,7 @@ function AlbumProvider({ children }) {
       setPhotos(data.data.photos);
       setTotalResults(data.data.total_results);
       setLoading(false);
-    }, [currentPage]
-  );
+    }, [currentPage]);
 
   useEffect(() => {
     fetchAlbum();
@@ -28,32 +29,33 @@ function AlbumProvider({ children }) {
     setWidth(largura);
   }, [fetchAlbum]);
 
-  const contextValue = useMemo( // retorna um valor memorizado, ajuda a evitar cálculos em cada renderização. Otimização de desempenho / boas práticas.
+  const contextValue = useMemo(
     () => ({
-    photos,
-    loading,
-    width,
-    setCurrentPage,
-    currentPage,
-    totalResults,
-    fetchAlbum
-  }),
-  [
-    photos,
-    loading,
-    width,
-    setCurrentPage,
-    currentPage,
-    totalResults,
-    fetchAlbum
-  ]);
+      photos,
+      loading,
+      width,
+      setCurrentPage,
+      currentPage,
+      totalResults,
+      fetchAlbum,
+    }),
+    [
+      photos,
+      loading,
+      width,
+      setCurrentPage,
+      currentPage,
+      totalResults,
+      fetchAlbum,
+    ],
+  );
 
   return (
     <AlbumContext.Provider value={contextValue}>
       {children}
     </AlbumContext.Provider>
   );
-}
+};
 
 AlbumProvider.propTypes = {
   children: PropTypes.node.isRequired,

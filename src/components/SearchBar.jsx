@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { BsSearch } from "react-icons/bs";
-import AlbumContext from "../context/AlbumContext";
+import React, { useContext } from 'react';
+import { BsSearch } from 'react-icons/bs';
+import AlbumContext from '../context/AlbumContext';
 
-function SearchBar() {
+const SearchBar = function SearchFunc() {
   const { width, fetchAlbum } = useContext(AlbumContext);
 
   return (
@@ -12,12 +12,12 @@ function SearchBar() {
         name="searchText"
         placeholder="Busque um tema e tecle enter"
         title="Tecle Enter para buscar!"
-        onKeyPress={(e) => e.key === "Enter" && fetchAlbum(e.target.value)}
+        onKeyPress={(e) => e.key === 'Enter' && fetchAlbum(e.target.value)}
         className="input-search"
       />
-      <BsSearch size={width >= 320 ? "40px" : "20px"} />
+      <BsSearch size={width >= 320 ? '40px' : '20px'} />
     </div>
   );
-}
+};
 
 export default SearchBar;

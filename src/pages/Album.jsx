@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import AlbumContext from "../context/AlbumContext";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import Spinning from "../components/Spinning";
-import CollectionNotFound from "../components/CollectionNotFound";
-import PaginationComponent from "../components/PaginationComponent";
+import React, { useContext } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import AlbumContext from '../context/AlbumContext';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import Spinning from '../components/Spinning';
+import CollectionNotFound from '../components/CollectionNotFound';
+import PaginationComponent from '../components/PaginationComponent';
 
-function Album() {
+const Album = function AlbumFunc() {
   const { photos, loading, width } = useContext(AlbumContext);
 
   return (
@@ -23,8 +23,8 @@ function Album() {
                 src={photo.src.medium}
                 alt={photo.photographer}
                 key={photo.id}
-                height={width >= 320 ? "400px" : "300px"} // teve que ser tamanho fixo por conta do lazyLoadImage
-                width={width >= 320 ? "300px" : "150px"}
+                height={width >= 320 ? '400px' : '300px'} // teve que ser tamanho fixo por conta do lazyLoadImage
+                width={width >= 320 ? '300px' : '150px'}
                 scrollPosition={scrollPosition}
                 className="photos-album"
               />
@@ -35,6 +35,6 @@ function Album() {
       <PaginationComponent />
     </main>
   );
-}
+};
 
 export default Album;
