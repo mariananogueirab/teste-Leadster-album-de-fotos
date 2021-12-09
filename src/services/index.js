@@ -13,5 +13,3 @@ export async function fetchPhotosAlbum(params = {}) {
     },
   });
 }
-
-// Como fica a requisição: `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=${perPage}&query=${searchText === '' ? 'nature' : searchText}`

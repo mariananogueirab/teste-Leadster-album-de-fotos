@@ -11,7 +11,7 @@ function Album() {
 
   return (
     <main>
-      {loading === false && photos?.length === 0 && <CollectionNotFound />}
+      {photos?.length === 0 && <CollectionNotFound />}
       <section className="album">
         {loading ? (
           <Spinning />

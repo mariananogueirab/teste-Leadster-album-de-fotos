@@ -30,31 +30,26 @@ function PaginationComponent() {
   const firstPage = () => {
     // volta pra primeira página
     setCurrentPage(1);
-    window.scrollTo(0, 0);
   };
 
   const prevPage = () => {
     // volta uma página
     currentPage !== 1 && setCurrentPage(currentPage - 1);
-    window.scrollTo(0, 0);
   };
 
   const nextPage = () => {
     // avança uma página
     currentPage !== 1 && setCurrentPage(currentPage + 1);
-    window.scrollTo(0, 0);
   };
 
   const lastPage = () => {
     // vai para a última página
     setCurrentPage(pages.length);
-    window.scrollTo(0, 0);
   };
 
   const currPage = (page) => {
     // página atual
     setCurrentPage(page);
-    window.scrollTo(0, 0);
   };
 
   return (

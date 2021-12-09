@@ -10,7 +10,7 @@ function AlbumProvider({ children }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
 
-  const fetchAlbum = useCallback( // vai ser chamado toda vez que a página mudar ou quando o searchTextParam mudar, evida renderizações desnecessárias
+  const fetchAlbum = useCallback( // vai ser chamado toda vez que a página mudar ou quando o searchTextParam mudar, evita renderizações desnecessárias
     async (searchTextParam) => {
       const data = await fetchPhotosAlbum({
         page: currentPage,
