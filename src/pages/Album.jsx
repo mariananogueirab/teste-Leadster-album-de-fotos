@@ -7,12 +7,11 @@ import CollectionNotFound from "../components/CollectionNotFound";
 import PaginationComponent from "../components/PaginationComponent";
 
 function Album() {
-  const { photos, loading, width, searchText } = useContext(AlbumContext);
+  const { photos, loading, width } = useContext(AlbumContext);
 
   return (
-    // TIRAR O SEARCH TEXT
     <main>
-      {searchText?.length > 0 && photos?.length === 0 && <CollectionNotFound />}
+      {loading === false && photos?.length === 0 && <CollectionNotFound />}
       <section className="album">
         {loading ? (
           <Spinning />
