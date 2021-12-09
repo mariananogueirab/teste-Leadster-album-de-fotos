@@ -1,6 +1,5 @@
-import React from 'react';
-import Logo from '../images/logo-leadster.png';
-import '../styles/album.css';
+import React from "react";
+import Logo from "../images/logo-leadster.png";
 
 const Header = function HeaderFunc() {
   return (

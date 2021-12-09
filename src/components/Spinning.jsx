@@ -1,6 +1,6 @@
-import React from 'react';
-import Spinner from 'react-bootstrap/Spinner'
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import Spinner from "react-bootstrap/Spinner";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const Spinning = function SpinnerFunc() {
   return (

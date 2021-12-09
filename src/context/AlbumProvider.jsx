@@ -1,54 +1,58 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React, {useState, useEffect, useCallback, useMemo} from 'react';
 import AlbumContext from './AlbumContext';
 import PropTypes from 'prop-types';
+import { fetchPhotosAlbum } from '../services';
 
 function AlbumProvider({ children }) {
-  const perPage = 80;
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [width, setWidth] = useState(0);
-  const [searchText, setSearchText] = useState('nature');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  const API_PHOTOS = `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=${perPage}&query=${searchText === '' ? 'nature' : searchText}`;
-  const API_KEY = '563492ad6f9170000100000154ad4ac4ee4346c385b7fff974a8a2b6';
+
+  const fetchAlbum = useCallback( // vai ser chamado toda vez que a página mudar ou quando o searchTextParam mudar, evida renderizações desnecessárias
+    async (searchTextParam) => {
+      const data = await fetchPhotosAlbum({
+        page: currentPage,
+        query: searchTextParam || 'nature',
+      });
+      setPhotos(data.data.photos);
+      setTotalResults(data.data.total_results);
+      setLoading(false);
+    }, [currentPage]
+  );
 
   useEffect(() => {
-    async function fetchAlbum() {
-      await axios.get(API_PHOTOS, { // autenticação necessária
-        headers: {
-          Authorization: `${API_KEY}`,
-        },
-      })
-        .then((data) => {
-          setPhotos(data.data.photos); // envia as fotos para o estado global
-          setTotalResults(data.data.total_results)
-        });
-      setLoading(false);
-    }
     fetchAlbum();
     const largura = window.innerWidth;
     setWidth(largura);
-  }, [API_PHOTOS]);
+  }, [fetchAlbum]);
 
-  const contextValue = {
+  const contextValue = useMemo( // retorna um valor memorizado, ajuda a evitar cálculos em cada renderização. Otimização de desempenho / boas práticas.
+    () => ({
     photos,
     loading,
     width,
-    setSearchText,
-    searchText,
     setCurrentPage,
     currentPage,
     totalResults,
-    perPage
-  };
+    fetchAlbum
+  }),
+  [
+    photos,
+    loading,
+    width,
+    setCurrentPage,
+    currentPage,
+    totalResults,
+    fetchAlbum
+  ]);
 
   return (
-    <AlbumContext.Provider value={ contextValue }>
+    <AlbumContext.Provider value={contextValue}>
       {children}
     </AlbumContext.Provider>
-  )
+  );
 }
 
 AlbumProvider.propTypes = {
