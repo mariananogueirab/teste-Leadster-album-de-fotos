@@ -4,7 +4,6 @@ import Album from './pages/Album';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SearchBar from './components/SearchBar';
-import './styles/album.css';
 
 function App() {
   return (
